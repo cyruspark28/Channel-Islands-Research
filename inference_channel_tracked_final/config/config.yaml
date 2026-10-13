@@ -1,0 +1,26 @@
+##############################
+# Variables you need to change
+##############################
+
+samples: "config/samples.csv"  # name of the sample metadata CSV 
+rates: "config/rates.csv" 
+final_prefix: "41-Peromyscus" # prefix for final output files
+populations: "MNL/ISL" # population labels
+pc_bounds: "-10,0.1,-0.25,10/-10,0.1,-0.25,10" # comma seperated, populations seperated by slashes (no slashes if popfile present)
+coordinate_bounds: "32.6,34.3,-118,-116.7/32,33,-119,-118.4" # comma seperated, populations seperated by slashes (no slashes if popfile present)
+mutation_rate: "0.00000000221" # species mutation rate FROM CSV
+generation_time: "0.25" # species generation time FROM CSV
+
+
+refGenome: 'GCA_026229955.1' # temporary definition
+
+##############################
+# Variables you *might* need to change
+##############################
+
+## Filtering options ##
+
+contig_size: 10000 # snps on contigs this size or smaller will be filtered from the final clean vcfs. Set to 0 to disable.
+maf: 0.01 #snps with MAF below this value will be filtered from the final clean vcfs. Set to 0 to disable.
+missingness: 0.75 #snps with missingness greater than this value will be filtered from the final clean vcfs. Set to 1 to disable.
+scaffolds_to_exclude: "mtDNA,Y" #comma separated, no spaces list of scaffolds to exclude from final clean vcfs. Set to blank to disable.
